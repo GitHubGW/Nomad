@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // const abc={
+      //   log:"123",
+      // }
+      // console.log(abc.log);
+
+      // const console={
+      //   log:function(){
+
+      //   }
+      // }
+
+      // console.log(console);
+
+      // function sayHello(name, age) {
+      //   console.log("Hello", name, "My age is", age);
+      // }
+
+      // sayHello("gw", 16);
+
+      // function sayHello2(name, age) {
+      //   return `나의 이름은 ${name}, 나의 나이는 ${age}`;
+      // }
+
+      // const user = sayHello2("포이리에", 32);
+      // console.log(user);
+
+      const calculator = {
+        plus: function (num1, num2) {
+          return num1 + num2;
+        },
+        sub: function (num1, num2) {
+          return num1 - num2;
+        },
+        mul: function (num1, num2) {
+          return num1 * num2;
+        },
+        div: function (num1, num2) {
+          return num1 / num2;
+        },
+        rem: function (num1, num2) {
+          return num1 % num2;
+        },
+        square: function (num1, num2) {
+          return num1 ** num2;
+        },
+      };
+
+      const plus_result = calculator.plus(7, 5);
+      const sub_result = calculator.sub(7, 5);
+      const mul_result = calculator.mul(7, 5);
+      const div_result = calculator.div(7, 5);
+      const rem_result = calculator.rem(7, 5);
+      const square_result = calculator.square(7, 5);
+
+      console.log(plus_result);
+      console.log(sub_result);
+      console.log(mul_result);
+      console.log(div_result);
+      console.log(rem_result);
+      console.log(square_result);
+    </script>
+  </body>
+</html>
