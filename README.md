@@ -1,2 +1,2 @@
-# Nomad
-Nomad
+# Nomad-Vanilla-JS-
+Vanilla JS
