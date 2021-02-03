@@ -10,9 +10,17 @@
 
     <script>
       const title = document.getElementById("title");
+      // console.error("This is my error!");
+      // title.innerHTML = "Nomad!!!";
       console.log(title);
-      console.error("This is my error!");
-      title.innerHTML = "Nomad!!!";
+      console.dir(title);
+      title.style.color = "coral";
+
+      console.dir(document);
+      console.dir(document.styleSheets);
+
+      const title2 = document.querySelector("#title");
+      console.log(title2);
     </script>
   </body>
 </html>

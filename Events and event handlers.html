@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="title">안녕하세요</h1>
+
+    <script>
+      // function handleResize(event) {
+      //   console.log(event);
+      //   console.log("handleResize함수 실행");
+      // }
+
+      // window.addEventListener("resize", handleResize);
+
+      const title = document.querySelector("#title");
+      console.dir(title);
+
+      function handleClick() {
+        title.style.color = "red";
+      }
+      title.addEventListener("click", handleClick);
+    </script>
+  </body>
+</html>
