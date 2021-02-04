@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .hellobtn {
+        color: yellowgreen;
+        transition: 0.5s;
+      }
+      .hellobtn.clicked {
+        color: purple;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="title" class="hellobtn">Hello~</h1>
+
+    <script>
+      const title = document.querySelector("#title");
+
+      const CLICKED_CLASS = "clicked";
+
+      function handleClick() {
+        const hasClass = title.classList.contains("clicked");
+
+        // if (hasClass === true) {
+        //   title.classList.remove(CLICKED_CLASS);
+        // } else if (hasClass === false) {
+        //   title.classList.add(CLICKED_CLASS);
+        // }
+
+        title.classList.toggle(CLICKED_CLASS);
+      }
+
+      function init() {
+        title.addEventListener("click", handleClick);
+      }
+      init();
+    </script>
+  </body>
+</html>
