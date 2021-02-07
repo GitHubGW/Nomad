@@ -1,9 +1,9 @@
 # Vanilla-JS
 
-# Tools
+## Tools
 * HTML5 <br>
 * CSS3 <br>
 * Vanilla JS
 
-# Goals
+## Goals
 * Practice Vanilla JS
