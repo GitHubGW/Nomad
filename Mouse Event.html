@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Hello</h2>
+
+    <script>
+      const colors = ["#1abc9c", "#3498db", "#9b59b6", "#f39c12", "#e74c3c"];
+      const title = document.querySelector("h2");
+      console.log(title);
+
+      const superEventHandler = {
+        handleMouseOver: function handleMouseOver() {
+          console.log("handleMouseOver함수 실행");
+          title.style.color = colors[0];
+          title.innerHTML = "The mouse is here!";
+        },
+
+        handleMouseLeave: function handleMouseLeave() {
+          console.log("handleMouseLeave함수 실행");
+          title.style.color = colors[1];
+          title.innerHTML = "The mouse is gone!";
+        },
+
+        handleResize: function handleResize() {
+          console.log("handleResize함수 실행");
+          title.style.color = colors[2];
+          title.innerHTML = "You just resized!";
+        },
+
+        handleRightClick: function handleRightClick() {
+          console.log("handleRightClick함수 실행");
+          title.style.color = colors[3];
+          title.innerHTML = "That was a right click!";
+        },
+      };
+
+      console.log(superEventHandler);
+
+      title.addEventListener("mouseover", superEventHandler.handleMouseOver);
+      title.addEventListener("mouseleave", superEventHandler.handleMouseLeave);
+      window.addEventListener("resize", superEventHandler.handleResize);
+      window.addEventListener("contextmenu", superEventHandler.handleRightClick);
+    </script>
+  </body>
+</html>
