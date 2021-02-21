@@ -25,8 +25,22 @@
             console.log(json.name);
             console.log(json.main.temp);
             h1.innerText = `현재 위치는 ${json.name}, 현재 온도는 ${json.main.temp}`;
+          })
+          .catch(function (error) {
+            console.log("error내용: ", error);
           });
       }
+
+      /* 
+      // ES7(2017)문법인 async와 await를 사용해서 위의 fetch().then을 처리함(동일한 결과. 코드 간결성)
+      async function getAPI(lat, lon) {
+        const postResponse = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`);
+        console.log(postResponse);
+        const post = await postResponse.json();
+        console.log(post);
+        console.log(post.name);
+      }
+      */
 
       function saveLS(geoObj) {
         // console.log(geoObj);
