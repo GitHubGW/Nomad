@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IP Blocking</title>
+  </head>
+  <body>
+    <a class="btn1" href="https://www.naver.com">Button1</a>
+    <a class="btn2" href="https://www.naver.com">Button2</a>
+
+    <script>
+      // 해당 주소로 API 요청 후 JSON을 받아서 IP와 국가 정보를 확인해서 만약 차단하려는 국가면 특정 동작을 못하게 막음.
+      const requestUserInfo = "https://extreme-ip-lookup.com/json";
+
+      const btn1 = document.querySelector(".btn1");
+      const btn2 = document.querySelector(".btn2");
+
+      function alertWarning() {
+        alert("당신의 IP 접속을 차단 합니다.");
+        // 필요시 리다이렉트 할 수도 있음
+        // window.location.replace("/");
+      }
+
+      function init() {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", requestUserInfo);
+        xhr.send();
+        xhr.onload = function () {
+          var parsedResponse = JSON.parse(xhr.response); // 접속한 IP에 따른 위치 및 국가 정보를 가져옴
+          console.log(parsedResponse);
+          try {
+            if (
+              parsedResponse.countryCode === "KR" ||
+              parsedResponse.country === "South Korea"
+            ) {
+              btn1.setAttribute("href", "javascript:void(0)");
+              btn2.setAttribute("href", "javascript:void(0)");
+              btn1.addEventListener("click", alertWarning);
+              btn2.addEventListener("click", alertWarning);
+              return;
+            }
+          } catch (error) {
+            console.log(error);
+          }
+        };
+      }
+      init();
+    </script>
+  </body>
+</html>
